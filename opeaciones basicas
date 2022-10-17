@@ -1,0 +1,42 @@
+package operacionesaritmeticas;
+
+import java.util.Scanner;
+
+public class OperacionesAritmeticas {
+
+    public static void main(String[] args) {
+        String  respuesta= "si";
+    do {
+        int numeroUno = 0;
+        int numeroDos = 0;
+        int sumaNumeros = 0;
+        int restaNumeros = 0;
+        int multiplicacionNumeros = 0;
+        
+        Scanner entrada = new Scanner(System.in);
+            System.out.println("Ingrese el primer número");
+            numeroUno = entrada.nextInt();
+            System.out.println("Ingrese el segundo número");
+            numeroDos = entrada.nextInt();
+
+            if ((numeroUno > 0) && (numeroDos > 0)) {
+                sumaNumeros = numeroUno + numeroDos;
+                restaNumeros = numeroUno - numeroDos;
+                multiplicacionNumeros = numeroUno * numeroDos;
+                System.out.println("La suma es " + sumaNumeros);
+                System.out.println("La resta es " + restaNumeros);
+                System.out.println("La multiplicación es " + multiplicacionNumeros);
+            } else {
+                if (numeroUno <= 0) {
+                    System.out.println("ERROR - El primer número ingresado es negativo");
+                }
+                if (numeroDos <= 0) {
+                    System.out.println("ERROR - El segundo número ingresado es negativo");
+                }
+            }
+            System.out.println("¿Desea otra aperación si-no");
+            respuesta = entrada.nextLine();
+        } while (respuesta.equals("no"));
+    }
+    
+}
