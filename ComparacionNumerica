@@ -6,19 +6,37 @@ public class ComparacioNumerica {
 
   
     public static void main(String[] args) {
-    int A=42384,B=123912 ,C=64283;
-        if (A>B) {
-            if (A>C) {
+    int A=4,B=3 ,C=6, D = 9;
+        if (A > B) {
+            if (A > C) {
+                if (A > D) {
+                    System.out.println("el mayor es A "+A);
+                }else{System.out.println("el mayor es D "+D);}
                 System.out.println("el mayor es A "+A);
                 
             }else{
-                System.out.println("el mayor es C "+C);}
+                if (C>D) {
+                    System.out.println("el mayor el C "+C);
+                }else{
+                    System.out.println("el mayor es D "+D);}
+}
+              
+                
             
         }else{
-            if (B>C) {
+            if (B > C) {
                 System.out.println("el mayor es B "+B);
+                if (B>D) {
+                    System.out.println("el mayor es B "+B);
+                }else{
+                    System.out.println("el mayor es D "+D);}
+            }else{
+                if (C > D) {
+                    System.out.println("el mayor es C "+C); 
+                }else{
+                    System.out.println("el mayor es D "+D);}
+}
                 
-            }else{System.out.println("el mayor es C "+C);}
 }
     }
     
