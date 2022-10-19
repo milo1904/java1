@@ -1,0 +1,36 @@
+package calculaodra.promedio;
+
+import java.util.Scanner;
+
+public class CalculaodraPromedio {
+
+
+    public static void main(String[] args) {
+   Scanner entrada = new Scanner (System.in);
+   double nota1=0;
+   double nota2=0 ;
+   double nota3=0;
+   double prom=0;
+        do {
+            System.out.println("ingresa las nota 1");
+            nota1=entrada.nextDouble();
+        } while (nota1<1||nota1>7);
+        do {
+            System.out.println("ingrese la nota 2");
+            nota2=entrada.nextDouble();
+        } while (nota2<1||nota2>7);
+        do {
+            System.out.println("ingrese nota 3");
+            nota3= entrada.nextDouble();
+        } while (nota3<1||nota3>7);
+        prom=(nota1+nota2+nota3)/3;
+        if (prom>4) {
+            System.out.println("el estudiante es aprobado ;D");
+            System.out.println("su promedio es: "+prom);
+        }else {
+            System.out.println("el estudiante es reprobado ;c");
+            System.out.println("el promedio es: "+prom);
+        }
+    }
+    
+}
