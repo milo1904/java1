@@ -1,0 +1,25 @@
+
+package comparacionumerica;
+
+
+public class ComparacioNumerica {
+
+  
+    public static void main(String[] args) {
+    int A=42384,B=123912 ,C=64283;
+        if (A>B) {
+            if (A>C) {
+                System.out.println("el mayor es A "+A);
+                
+            }else{
+                System.out.println("el mayor es C "+C);}
+            
+        }else{
+            if (B>C) {
+                System.out.println("el mayor es B "+B);
+                
+            }else{System.out.println("el mayor es C "+C);}
+}
+    }
+    
+}
