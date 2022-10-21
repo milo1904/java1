@@ -1,0 +1,48 @@
+
+package sueldomasint;
+
+import java.util.Scanner;
+
+
+public class SueldoMasInt {
+
+  
+    public static void main(String[] args) {
+        //creacion de metodo scanner//
+        Scanner entrada = new Scanner (System.in);
+        
+        /*variables*/
+        int SueldoTrabajador;
+        int mayorSueldo = 0;
+        int menorSueldo = 1000000000;
+        String NombreTrabajador;
+        String nombreMenor;
+        String nombreMayor;
+        int EdadTrabajador;
+        int edadMenor;
+        int edadMayor;
+        int contador = 1;
+        while (contador <= 5) {
+            System.out.println("ingrese el nombre: ");
+            NombreTrabajador = entrada.next();
+            System.out.println("ingrese la edad: ");
+            EdadTrabajador = entrada.nextInt();
+            System.out.println("ingrese el sueldo: ");
+            SueldoTrabajador = entrada.nextInt();
+            if ((SueldoTrabajador >= 400000) && (EdadTrabajador >= 18) && (EdadTrabajador <= 65)) {
+                if (SueldoTrabajador > mayorSueldo) {
+                    mayorSueldo = SueldoTrabajador;
+                    edadMayor= EdadTrabajador;
+                    nombreMayor = NombreTrabajador;
+                }if (SueldoTrabajador < menorSueldo) {
+                    menorSueldo = SueldoTrabajador;
+                    edadMenor = EdadTrabajador;
+                    nombreMenor = NombreTrabajador;
+                }
+             contador ++;
+            }
+        }
+    
+    }
+    
+}
