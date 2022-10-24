@@ -1,0 +1,59 @@
+
+package calculadoraconciclos;
+
+import java.util.Scanner;
+
+
+public class CalculadoraConCiclos {
+
+   
+    public static void main(String[] args) {
+      int tabla = 0;
+      int opcion;
+      int numeroTabla = 0;
+      int resultado;
+      Scanner entrada= new Scanner(System.in);
+        do {
+            System.out.println("--------TABLA DE MULTIPLICAR---------/n"
+            +"1 CICLO FOR/n"
+            +"2 CICLO WHILE/n"
+            +"3 CICLO DO/n"
+            +"4 SALIR"
+            +"-------------------------------------------------------/n"
+                    +"seleccione una opcion");
+            opcion = entrada.nextInt();
+        } while ((opcion>=1) && (opcion<=4));
+        switch (opcion) {
+            case 1:
+                System.out.println("ingrse la tabla a calcular");
+                numeroTabla= entrada.nextInt();
+                
+                for (int i = 1; i < 10; i++) {
+                    resultado = numeroTabla +i;
+                    System.out.println(numeroTabla + "x" + i + " - " + resultado);
+                }
+                
+                break;
+            case 2:
+                int i =1;
+                while (1<=10) {
+                   resultado = numeroTabla * i;
+                    System.out.println(numeroTabla + "x" + i + " - " + resultado); 
+                }
+                break;
+            case 3:
+                int i = 1;
+                do {
+                    resultado = numeroTabla +i;
+                    System.out.println(numeroTabla + "x" + i + " - " + resultado);
+                } while (i <= 10);
+                break;
+            case 4:
+               
+                break;
+            default:
+                throw new AssertionError();
+        }
+    }
+    
+}
