@@ -1,0 +1,203 @@
+
+package javaBanco;
+
+import java.util.Scanner;
+
+
+public class CreacionDeLogin {
+
+
+    public static void main(String[] args) {
+    Scanner entrada = new Scanner(System.in) ; 
+    
+    String user = "retro"; 
+    String usuario; 
+    int clave = 1234; 
+    int contraseña; 
+    int contador = 0;
+    int opciones;
+    int giroDinero = 0; 
+    int veinteMil = 0;
+    int diezMil = 0;
+    int cincoMil = 0;
+    int dosMil = 0;
+    int unMil = 0;
+    int saldoInicial = 0;
+    int saldoFinal = 0;
+    int confirmacion = 0;
+    int contUno = 0;
+    int contDos = 0;
+    int claveTemporal = 0;
+    int respuesta;
+    int sueldoTotal = 1000000;
+    int newClave;
+    int salir = 0;
+    
+        System.out.println("=====LOGIN=====\n"
+        + "ingrese usuario\n");
+        usuario = entrada.nextLine() ; 
+        System.out.println("ingrese contraseña") ;
+        contraseña = entrada.nextInt(); 
+        System.out.println("===============") ; 
+
+        do{
+        
+            if (usuario.equals(user)) { 
+                if (contraseña == clave) { 
+                    
+                    confirmacion = 1;
+                    contador = 3;
+                    
+                } else{
+                    
+                    contador = contador + 1 ;
+                    System.out.println("ingrese contraseña") ;
+                    contraseña = entrada.nextInt(); 
+                }   
+                
+            
+            }
+            
+        } while (contador < 2);
+        
+        do {
+                    if (confirmacion == 1 ){
+            System.out.println("=====MENU DE OPCIONES=====\n"
+                    + "1.Cambiar clave\n"
+                    + "2.Giro de dinero\n"
+                    + "3.Consultar sueldo\n"
+                    + "4.Depocito de dinero\n"
+                    + "5.Salir\n");
+                    opciones = entrada.nextInt() ; 
+
+                    switch (opciones) {
+                case 1:
+                    
+                    contador = 0;
+                    
+                    do{
+                        
+                        System.out.println("===INGESE CLAVE ACTUAL=== ");
+                        contraseña = entrada.nextInt();
+                        
+                        if (contraseña == clave) {
+                            
+                            do{
+                                
+                                System.out.println("===INGRSE NUEVA CLAVE===");
+                                contraseña = entrada.nextInt();
+                                System.out.println("===CONFIRME NUEVA CLAVE");
+                                 newClave = entrada.nextInt();
+                                
+                                if (contraseña == newClave) {
+                                    
+                                    clave = newClave;
+                                    contador = 3; 
+                                    
+                                }else{
+                                    System.out.println("CONTRASEÑA NO COINCIDE");
+                                }
+                            }while(contraseña != newClave);
+                                
+                        }else{
+                        contador++;
+                            System.out.println("INTENTOS RESTANTES" + (3 - contador));
+                            
+                        }
+                        
+                    }while(contador != 3);
+                    
+                break;
+
+                case 2:
+                    do {
+                           System.out.println("=====INGRESE GIRO DE DINERO=====");
+                           System.out.println("===MINIMO $1000 Y MAXIMO $200000===");
+                        giroDinero = entrada.nextInt();
+                        saldoInicial = giroDinero;
+                    } while ((giroDinero <1000) ||(giroDinero>200000));
+
+                        if (giroDinero >= 20000){ 
+                            veinteMil = giroDinero / 20000;
+                            giroDinero = giroDinero - (veinteMil*20000);
+
+
+                        }
+                        if (giroDinero >= 10000) {
+                            diezMil = giroDinero / 10000;
+                            giroDinero = giroDinero - (diezMil*10000);
+
+
+                        }
+                        if (giroDinero >= 5000) {
+                            cincoMil = giroDinero / 5000;
+                            giroDinero = giroDinero - (cincoMil*5000);
+
+                        }
+                        if (giroDinero >= 2000) {
+                            dosMil = giroDinero / 2000;
+                            giroDinero = giroDinero - (dosMil*2000);
+
+                        }
+                        if (giroDinero >= 1000) {
+                            unMil = giroDinero / 1000;
+                            giroDinero = giroDinero - (unMil*1000);
+                         
+                        }
+                        
+                        saldoFinal = saldoInicial - giroDinero;
+
+                        if (giroDinero != 0 ) {
+                            saldoFinal = saldoInicial - giroDinero;
+                            System.out.println("=====EL MONTO ES "+ saldoFinal +"=====");
+
+                        }
+                            
+                            System.out.println("===DESEA GIRAR===\n"
+                            + "1. SI\n"
+                            + "2. NO");
+                            respuesta = entrada.nextInt();
+                             
+                        if (respuesta == 1 ) {
+                        sueldoTotal = sueldoTotal - saldoFinal ;
+                            System.out.println("CANTIDAD DE BILLETES DE 20.000 " + veinteMil +"\n"
+                            + "CANTIDAD DE BILLETES DE 10.000 " + diezMil +"\n"
+                            + "CANTIDAD DE BILLETES DE 5.000 " + cincoMil +"\n"
+                            + "CANTIDAD DE BILLETES DE 2.000 " + dosMil +"\n"
+                            + "CANTIDAD DE BILLETES DE 1.000 " + unMil); 
+
+                        }   
+                    break;
+                    
+                case 3:
+                
+                    System.out.println("===SU SUELDO ACTUAl ES=== " + sueldoTotal );
+                    
+                    break;
+                    
+                case 4:
+                    do {
+                        System.out.println("===SU SUELDO ACUTAL ES=== "+ sueldoTotal);
+                        System.out.println("===MONTO A DEPOSITAR===");
+                        System.out.println("===MINIMO $1000 Y MAXIMO $200000===");
+                        giroDinero = entrada.nextInt();
+                        if (giroDinero >1000 && giroDinero <200000) {
+                        sueldoTotal = sueldoTotal + giroDinero; 
+                    } 
+                    } while (giroDinero <1000 || giroDinero >200000);
+                   
+                    break;
+                        
+                default:
+                            
+                    salir = 2;
+            }
+                        if (salir != 2 ) {
+                           System.out.println("===¿DESEA REALIZAR OTRA OPERACION?===\n"
+                        +"1. SI\n"
+                        + "2. NO");
+                        salir = entrada.nextInt(); 
+                        }
+}
+        
+        } while (salir != 2);
