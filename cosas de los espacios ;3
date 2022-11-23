@@ -1,0 +1,30 @@
+
+package quitarcaracteres;
+
+
+public class QuitarCaracteres {
+
+    
+    public static void main(String[] args) {
+       //elimina los caracteres de los extremos//
+       String palabra =" hola, que   tal " ;
+       String palabraAux;
+       
+       palabraAux = palabra.trim();
+        System.out.println(palabraAux);
+        //resultado: "Hola, que   tal" 
+        
+        
+        //deja tdo sin espacios//
+        palabraAux = palabra.replaceAll(" ","");
+        System.out.println(palabraAux);
+        // resultado: "hola,quetal"
+        
+        
+        //reemplaza varios espacios en blanco por uno//
+        palabraAux= palabra.replaceAll(" +" , " ");
+        System.out.println(palabraAux);
+        //resultado: " Hola, que tal "
+    }
+    
+}
