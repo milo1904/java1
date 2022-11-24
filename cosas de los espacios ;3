@@ -25,6 +25,20 @@ public class QuitarCaracteres {
         palabraAux= palabra.replaceAll(" +" , " ");
         System.out.println(palabraAux);
         //resultado: " Hola, que tal "
+        
+        String str = "he;llo, w!!orld 123!!";
+        str = str.replaceAll ("|^\\w+", " ");
+        System.out.println(str);
+        
+        str = str.replaceAll( "[^a-zA-Z]", "");
+        System.out.println(str);
+        
+        String str = "Hello, World_123!!";
+        String charsToRemove = ",_!";
+        for (char c : charsToRemove.toCharArray() ) {
+           str = str.replace(String. valueOf(c), "");
+        }
+        System.out.println(str);
     }
     
 }
