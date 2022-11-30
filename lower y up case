@@ -1,0 +1,24 @@
+
+package metodoslowercaseupcase;
+
+
+public class MetodosLowerCaseUpcase {
+
+    
+    public static void main(String[] args) {
+      String s = "Hi";
+        System.out.println(s.toLowerCase());
+        //resultado "hi"//
+        System.out.println(s.toUpperCase());
+        //resultado "HI"
+        
+        String str = "capital de chile";
+        
+        str = str.substring(0 , 7)
+        .toUpperCase() + str.substring(7);
+        System.out.println(str);
+        
+       
+    }
+    
+}
