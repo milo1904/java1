@@ -1,0 +1,33 @@
+
+package juegoahorcado;
+
+import java.util.Scanner;
+
+
+public class JuegoAhorcado {
+
+    
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String palabra;
+        String palabraMin;
+        int largo;
+        
+        
+        System.out.println("Ingrese una palabra");
+        palabra = input.nextLine();
+        palabraMin = palabra.toLowerCase();
+        largo = palabra.length();
+        char palabraChar[] = new char[largo];
+        
+        for (int i = 0; i < largo; i++) {
+          palabraChar [i] = palabraMin.charAt(i);
+        }
+        for (int i = 0; i < 30; i++) {
+            System.out.println("");  
+        }
+        System.out.println("================AHORQUEMONOS JUNTOS================");
+        
+    }
+    
+}
