@@ -12,12 +12,14 @@ public class JuegoAhorcado {
         String palabra;
         String palabraMin;
         int largo;
+        char letras = ;
         
         
         System.out.println("Ingrese una palabra");
         palabra = input.nextLine();
-        palabraMin = palabra.toLowerCase();
-        largo = palabra.length();
+        palabraMin = palabra.replaceAll ("//s + " , "");
+        palabraMin = palabraMin.toLowerCase();
+        largo = palabraMin.length();
         char palabraChar[] = new char[largo];
         
         for (int i = 0; i < largo; i++) {
@@ -26,8 +28,15 @@ public class JuegoAhorcado {
         for (int i = 0; i < 30; i++) {
             System.out.println("");  
         }
-        System.out.println("================AHORQUEMONOS JUNTOS================");
         
+        
+        System.out.println(palabraMin);
+        System.out.println("================AHORQUEMONOS JUNTOS================");
+        do {
+            System.out.println("Ingrese una LETRA");
+            letras = input.next().charAt(0);
+            letras = letras.toLowerCase();
+        } while (true);
     }
     
 }
