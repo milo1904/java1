@@ -9,15 +9,16 @@ public class JuegoAhorcado {
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String palabra;
-        String palabraMin;
+        String palabra = "";
+        String palabraMin = "";
+        String letras ;
+        String letrasMin;
         int largo;
-        char letras = ;
-        
-        
+        char letra;
+        int intentos = 5;
         System.out.println("Ingrese una palabra");
         palabra = input.nextLine();
-        palabraMin = palabra.replaceAll ("//s + " , "");
+        palabraMin = palabra.replaceAll ("//s+" , "");
         palabraMin = palabraMin.toLowerCase();
         largo = palabraMin.length();
         char palabraChar[] = new char[largo];
@@ -33,10 +34,23 @@ public class JuegoAhorcado {
         System.out.println(palabraMin);
         System.out.println("================AHORQUEMONOS JUNTOS================");
         do {
+            char palabraRes[] = new char [largo];
             System.out.println("Ingrese una LETRA");
-            letras = input.next().charAt(0);
-            letras = letras.toLowerCase();
-        } while (true);
+            letras = input.next();
+            letrasMin = letras.toLowerCase();
+            letra = letrasMin.charAt(0);
+             intentos = intentos - 1;
+            for (int i = 0; i < largo; i++) {
+                if (letra == palabraChar[i]) {
+                    palabraRes[i] = letra;
+                }else{
+                    intentos = intentos - 1;
+                    System.out.println("lo siento no has acertado");
+                    System.out.println("te qquedan: " + intentos);
+                    i = largo;
+                }
+            }
+        } while (intentos != 0);
     }
     
 }
