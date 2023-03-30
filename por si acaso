@@ -1,0 +1,33 @@
+package waja;
+
+
+public class Waja {
+
+    
+    public static void main(String[] args) {
+        double mayor= 0;
+        double prom;
+        int postMay = 0;
+        //asi se hace una suma acomulada//
+        double suma = 0;
+        double nums[] = {2,7,8,4};
+        for (int i = 0; i <= 4; i++) {
+            suma= suma+nums[i];
+        }
+        prom = suma /5;
+        
+        System.out.println("la suma de los numero es:" +prom);
+        
+        for (int i = 0; i < 10; i++) {
+            if ( nums[i]>mayor) {
+                mayor = nums[i];
+                postMay =i;
+            }
+            System.out.println("el numero mayor es:"+mayor);
+            System.out.println("la pocision del numero mayor es:"+ postMay);
+        }
+    
+    }
+    
+    
+}
